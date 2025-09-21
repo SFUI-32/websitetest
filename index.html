@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leo Walker — Personal Site</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Side Navigation -->
+  <nav id="side-nav">
+    <button id="close-nav" aria-label="Close Menu">✕</button>
+    <a href="index.html">Home</a>
+    <a href="blog.html">Blog</a>
+    <a href="creative-brief.html">Creative Brief</a>
+  </nav>
+
+  <!-- Image next to nav -->
+  <img id="side-image" src="assets/side.png" alt="Side image">
+
+  <!-- Menu toggle (moved after nav & image so CSS can target it) -->
+  <button id="menu-toggle" aria-label="Open Menu">☰</button>
+
+  <!-- Overlay -->
+  <div id="overlay"></div>
+
+  <!-- Main Content -->
+  <main class="hero">
+    <div class="hero-text">
+      <h1>Leo Walker</h1>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Leo Walker</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

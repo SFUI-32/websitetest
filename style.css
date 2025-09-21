@@ -1,0 +1,148 @@
+:root {
+    --bg-overlay: rgba(0, 0, 0, 0.6);
+    --text: #fff;
+    --muted: #ddd;
+    --brand: #7aa2f7;
+  }
+  
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: var(--text);
+  }
+  
+  /* Hero background image */
+  .hero {
+    min-height: 100vh;
+    background: url("assets/hero.png") top center / cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+  }
+  .hero-text h1 {
+    font-size: 3rem;
+    margin: 0;
+    /* White text with black outline */
+    color: var(--text);
+    text-shadow:
+      -2px -2px 0 #000,
+       2px -2px 0 #000,
+      -2px  2px 0 #000,
+       2px  2px 0 #000;
+  }
+
+/* Blog background */
+.hero--under-construction {
+  background: url("assets/UnderConstruction.png") bottom center / cover no-repeat;
+}
+
+  
+  /* Floating circular menu button */
+  #menu-toggle {
+    position: fixed;
+    top: 41px;     
+    left: 100px;   
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.6);
+    border: none;
+    font-size: 26px;
+    color: var(--text);
+    cursor: pointer;
+    z-index: 2000;
+    transition: opacity 0.3s ease;
+  }
+  
+  /* Hide button while nav is open */
+  #side-nav.open ~ #menu-toggle {
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  /* Side navigation */
+  #side-nav {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    width: 240px;
+    height: 100%;
+    background: #141820;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transition: left 0.3s ease;
+    z-index: 1001;
+  }
+  #side-nav.open { left: 0; }
+  #side-nav a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 18px;
+    text-shadow: 
+      -1px -1px 0 #000,
+       1px -1px 0 #000,
+      -1px  1px 0 #000,
+       1px  1px 0 #000;
+  }
+  #side-nav a:hover { color: var(--text); }
+  #close-nav {
+    align-self: flex-end;
+    background: none;
+    border: none;
+    font-size: 22px;
+    color: var(--text);
+    cursor: pointer;
+  }
+  
+  /* Side image next to nav */
+  #side-image {
+    position: fixed;
+    top: 0;
+    left: -260px;      /* start aligned with nav */
+    height: 100%;
+    width: auto;
+    transform: scale(0.33);
+    transform-origin: top left;
+    opacity: 0;
+    transition: left 0.3s ease, opacity 0.3s ease;
+    z-index: 1002;
+  }
+  #side-nav.open + #side-image {
+    left: 240px;       /* appear right after nav */
+    opacity: 1;
+  }
+  
+  /* Overlay */
+  #overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 900;   /* below nav & side image */
+  }
+  #overlay.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 20px;
+    color: var(--muted);
+    background: #111;
+    text-shadow:
+      -1px -1px 0 #000,
+       1px -1px 0 #000,
+      -1px  1px 0 #000,
+       1px  1px 0 #000;
+  }
+  
